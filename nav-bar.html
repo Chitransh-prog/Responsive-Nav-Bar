@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Navigation Bar</title>
+<style>
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: left;
+        background-color: #20a7db;
+        padding: 10px;
+        color: #161515;
+        border:0.5px solid black;
+        border-radius: 10px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav ul li {
+        margin-right: 20px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+    }
+
+    .hamburger-icon {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 15px;
+        height: 15px;
+        background:#20a7db ;
+        border: none;
+    }
+
+    .hamburger-icon span {
+        height: 1.5px;
+        margin:auto;
+        width: 15px;
+        background: #1d1c1c;
+    }
+
+    @media (max-width: 600px) {
+        nav {
+            flex-direction: row;
+        }
+        
+        nav ul {
+            display: none;
+            flex-direction: row;
+            width: 100%;
+        }
+        
+        nav ul.active {
+            display: flex;
+        }
+
+        .hamburger-icon {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            padding: 10px;
+            width: 100%;      }
+    }
+</style>
+</head>
+<body alink="blue" vlink="black">
+
+<nav>
+    <ul id="nav">
+        <li><a href="https://www.linkedin.com/feed/">Home</a></li>
+        <li><a href="https://www.linkedin.com/in/chitransh-prasad/">About</a></li>
+        <li><a href="https://www.linkedin.com/in/chitransh-prasad/details/skills/">Skills</a></li>
+        <li><a href="mailto:chitranshp35@gmail.com.com">Contact</a></li>
+    </ul>
+    <button type="button" class="hamburger-icon" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
